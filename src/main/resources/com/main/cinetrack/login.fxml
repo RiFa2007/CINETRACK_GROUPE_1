@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.SVGPath?>
+
+<StackPane fx:id="root" prefWidth="902.0" prefHeight="640.0"
+           styleClass="root-pane"
+           xmlns="http://javafx.com/javafx/17"
+           xmlns:fx="http://javafx.com/fxml/1"
+           stylesheets="@../css/connexion.css"
+           fx:controller="com.main.cinetrack.controllers.ConnexionController">
+
+    <!-- Cercles décoratifs d'arrière-plan -->
+    <Circle radius="127.0" styleClass="circle-top" StackPane.alignment="TOP_LEFT"
+            translateX="-67.0" translateY="-67.0"/>
+    <Circle radius="210.0" styleClass="circle-bottom" StackPane.alignment="BOTTOM_RIGHT"
+            translateX="210.0" translateY="210.0"/>
+
+    <!-- Carte de connexion -->
+    <VBox styleClass="card" alignment="TOP_CENTER" maxWidth="303.0" maxHeight="-Infinity"
+          StackPane.alignment="CENTER">
+
+        <!-- Logo -->
+        <StackPane styleClass="logo-box" prefWidth="40.0" prefHeight="40.0"
+                   minWidth="40.0" minHeight="40.0" maxWidth="40.0" maxHeight="40.0">
+            <SVGPath styleClass="logo-icon"
+                     content="M0 0 H14 V14 H0 Z M3.5 0 V14 M10.5 0 V14 M0 3.5 H3.5 M0 7 H3.5 M0 10.5 H3.5 M10.5 3.5 H14 M10.5 7 H14 M10.5 10.5 H14"/>
+        </StackPane>
+
+        <Label text="Cinetrack" styleClass="app-title">
+            <VBox.margin><Insets top="9.0"/></VBox.margin>
+        </Label>
+        <Label text="Connectez-vous à votre compte" styleClass="app-subtitle"/>
+
+        <!-- Formulaire -->
+        <VBox spacing="0.0" alignment="TOP_LEFT">
+            <VBox.margin><Insets top="30.0"/></VBox.margin>
+
+            <Label text="Login" styleClass="field-label"/>
+            <TextField promptText="Entrez votre login" styleClass="field-input">
+                <VBox.margin><Insets top="6.0"/></VBox.margin>
+            </TextField>
+
+            <Label text="Mot de passe" styleClass="field-label">
+                <VBox.margin><Insets top="20.0"/></VBox.margin>
+            </Label>
+            <HBox styleClass="field-box" alignment="CENTER_LEFT" spacing="6.0">
+                <VBox.margin><Insets top="6.0"/></VBox.margin>
+                <SVGPath styleClass="pwd-icon"
+                         content="M0 0 H12 V7 H0 Z M2 3.5 H3 M5.5 3.5 H6.5 M9 3.5 H10"/>
+                <PasswordField text="12345678" styleClass="field-input-inner" HBox.hgrow="ALWAYS"/>
+            </HBox>
+
+            <Button text="Se connecter" fx:id="button" styleClass="login-button" maxWidth="Infinity" onAction="#changeRoot">
+                <VBox.margin><Insets top="26.0"/></VBox.margin>
+            </Button>
+        </VBox>
+    </VBox>
+</StackPane>

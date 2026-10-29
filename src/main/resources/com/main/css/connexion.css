@@ -1,0 +1,99 @@
+/* Couleurs mesurées sur la capture (pixels) :
+   fond #f2f4f8 | cercle haut #ddeaf7 | cercle bas #e8eff7
+   bleu principal #1f8fea | bordure champ #d5d9de
+   placeholder #8b9197 | icône mot de passe #697077 | sous-titre ~#73787d (estimé) */
+
+.root-pane {
+    -fx-background-color: #f2f4f8;
+    -fx-font-family: "Roboto", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+.circle-top    { -fx-fill: #ddeaf7; }
+.circle-bottom { -fx-fill: #e8eff7; }
+
+/* Carte */
+.card {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 16;
+    -fx-padding: 30;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 18, 0.1, 0, 4);
+}
+
+/* Logo */
+.logo-box {
+    -fx-background-color: #1f8fea;
+    -fx-background-radius: 8;
+}
+.logo-icon {
+    -fx-fill: transparent;
+    -fx-stroke: #ffffff;
+    -fx-stroke-width: 1.4;
+}
+
+/* Titres */
+.app-title {
+    -fx-text-fill: #1f8fea;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+.app-subtitle {
+    -fx-text-fill: #73787d;
+    -fx-font-size: 11px;
+    -fx-padding: 3 0 0 0;
+}
+
+/* Libellés */
+.field-label {
+    -fx-text-fill: #1c1f23;
+    -fx-font-size: 10px;
+}
+
+/* Champs */
+.field-input,
+.field-box {
+    -fx-background-color: #f2f4f8;
+    -fx-background-radius: 2 2 0 0;
+    -fx-border-color: transparent transparent #d5d9de transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-pref-height: 31;
+    -fx-min-height: 31;
+    -fx-max-height: 31;
+}
+.field-input {
+    -fx-padding: 0 10 0 10;
+    -fx-font-size: 11px;
+    -fx-text-fill: #1c1f23;
+    -fx-prompt-text-fill: #8b9197;
+}
+.field-box {
+    -fx-padding: 0 10 0 10;
+}
+.field-input-inner{
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-font-size: 9px;
+    -fx-text-fill: #697077;
+    -fx-faint-focus-color: transparent;
+    -fx-focus-color: transparent;
+}
+.pwd-icon {
+    -fx-fill: transparent;
+    -fx-stroke: #697077;
+    -fx-stroke-width: 1.4;
+}
+
+
+
+/* Bouton */
+.login-button {
+    -fx-background-color: #1f8fea;
+    -fx-background-radius: 8;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-pref-height: 35;
+    -fx-cursor: hand;
+}
+.login-button:hover   { -fx-background-color: #1a7fd3; }
+.login-button:pressed { -fx-background-color: #166fb9; }

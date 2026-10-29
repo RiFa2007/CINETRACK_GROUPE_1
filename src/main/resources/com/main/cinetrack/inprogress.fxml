@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.scene.layout.StackPane?>
+<StackPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.cinetrack.controllers.InprogressController">
+   <children>
+
+      <ImageView fitHeight="530.0" fitWidth="628.0" layoutX="-72.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Under_Construction.gif" />
+         </image></ImageView>
+      <Label layoutX="193.0" layoutY="31.0" prefHeight="42.0" prefWidth="214.0" text="In Progress" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="System Bold" size="38.0" />
+         </font>
+      </Label>
+   </children>
+</StackPane>

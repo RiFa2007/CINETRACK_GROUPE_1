@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.shape.Line?>
+
+<!-- Pas de fx:controller ici : les handlers (#goHome...) sont résolus
+     par le contrôleur du fichier main.fxml qui inclut cette navbar. -->
+
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml"
+      spacing="8"
+      style="..."
+      fx:controller="com.main.cinetrack.controllers.NavbarController">
+    <!-- Logo -->
+    <HBox alignment="CENTER" spacing="8">
+        <Label text="🎬" style="-fx-font-size: 22;"/>
+        <Label text="CINETRACK" style="-fx-text-fill: #2E6BE6; -fx-font-weight: bold; -fx-font-size: 15;"/>
+    </HBox>
+
+    <Region prefHeight="10"/>
+
+    <!-- Items du menu -->
+    <HBox alignment="CENTER_LEFT" spacing="12" onMouseClicked="#goHome"
+          style="-fx-background-color: #E8F0FE; -fx-background-radius: 8; -fx-padding: 10 14 10 14; -fx-border-color: #2E6BE6; -fx-border-width: 0 0 0 3; -fx-border-style: solid none none none; -fx-cursor: hand;">
+        <Label text="🏠" style="-fx-font-size: 15;"/>
+        <Label text="Home" style="-fx-text-fill: #2E6BE6; -fx-font-weight: bold;"/>
+    </HBox>
+
+    <HBox alignment="CENTER_LEFT" spacing="12" onMouseClicked="#goFilms"
+          style="-fx-padding: 10 14 10 14; -fx-cursor: hand;">
+        <Label text="🎞️" style="-fx-font-size: 15;"/>
+        <Label text="Films" style="-fx-text-fill: #333;"/>
+    </HBox>
+
+    <HBox alignment="CENTER_LEFT" spacing="12" onMouseClicked="#goSeance"
+          style="-fx-padding: 10 14 10 14; -fx-cursor: hand;">
+        <Label text="🗑" style="-fx-font-size: 15;"/>
+        <Label text="Séance" style="-fx-text-fill: #333;"/>
+    </HBox>
+
+    <HBox alignment="CENTER_LEFT" spacing="12" onMouseClicked="#goSalle"
+          style="-fx-padding: 10 14 10 14; -fx-cursor: hand;">
+        <Label text="🖨" style="-fx-font-size: 15;"/>
+        <Label text="Salle" style="-fx-text-fill: #333;"/>
+    </HBox>
+
+    <Region prefHeight="10"/>
+    <Separator/>
+    <Region prefHeight="6"/>
+
+    <!-- Prochaines séances -->
+    <Label text="Prochaines séances" style="-fx-font-weight: bold; -fx-font-size: 13; -fx-padding: 4 0 0 6;"/>
+
+    <Region prefHeight="6"/>
+
+    <VBox alignment="CENTER" spacing="0">
+        <HBox alignment="CENTER_LEFT" spacing="10" maxWidth="Infinity"
+              style="-fx-background-color: white; -fx-background-radius: 20; -fx-padding: 8 12 8 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 6, 0, 0, 2);">
+            <Label text="Inception" style="-fx-text-fill: #333;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label text="18h30" style="-fx-background-color: #DCE7FD; -fx-text-fill: #2E6BE6; -fx-font-weight: bold; -fx-background-radius: 10; -fx-padding: 3 10 3 10;"/>
+        </HBox>
+
+        <Line startX="0" endX="0" startY="0" endY="24" style="-fx-stroke: #C9D4EA; -fx-stroke-width: 1.5;"/>
+
+        <HBox alignment="CENTER_LEFT" spacing="10" maxWidth="Infinity"
+              style="-fx-background-color: white; -fx-background-radius: 20; -fx-padding: 8 12 8 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 6, 0, 0, 2);">
+            <Label text="Call of d..." style="-fx-text-fill: #333;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label text="20H30" style="-fx-background-color: #DCE7FD; -fx-text-fill: #2E6BE6; -fx-font-weight: bold; -fx-background-radius: 10; -fx-padding: 3 10 3 10;"/>
+        </HBox>
+
+        <Label text="•••" style="-fx-text-fill: #666; -fx-padding: 8 0 0 0;"/>
+    </VBox>
+
+    <!-- Pousse "Setting" vers le bas -->
+    <Region VBox.vgrow="ALWAYS"/>
+
+    <Separator/>
+    <Region prefHeight="4"/>
+
+    <HBox alignment="CENTER_LEFT" spacing="12" onMouseClicked="#goSetting"
+          style="-fx-padding: 10 14 10 14; -fx-cursor: hand;">
+        <Label text="⚙" style="-fx-font-size: 15;"/>
+        <Label text="Setting" style="-fx-text-fill: #333;"/>
+    </HBox>
+
+</VBox>

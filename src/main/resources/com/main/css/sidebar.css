@@ -1,0 +1,189 @@
+/* Couleurs mesurées sur la capture (pixels) :
+   bleu actif #0f62fe | fond item actif #e7f0ff | fond badge heure #d4e3ff
+   texte/icônes sombres #21272a (icônes) et #000000 (texte)
+   séparateurs #dddddd | bordure carte #cfcfcf | trait vertical #dfdfdf
+   bordure du panneau #cfd0d2 | fond #ffffff */
+
+/* ---------- ScrollPane (la page) ---------- */
+.sidebar-scroll {
+    -fx-background-color: #ffffff;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-border-color: #cfd0d2;
+    -fx-border-width: 1;
+}
+.sidebar-scroll > .viewport { -fx-background-color: #ffffff; }
+.sidebar-scroll .corner     { -fx-background-color: transparent; }
+
+.sidebar-scroll .scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-pref-width: 8;
+    -fx-padding: 0;
+}
+.sidebar-scroll .scroll-bar .track { -fx-background-color: transparent; -fx-border-color: transparent; }
+.sidebar-scroll .scroll-bar .thumb {
+    -fx-background-color: #cfcfcf;
+    -fx-background-radius: 4;
+    -fx-background-insets: 1;
+}
+.sidebar-scroll .scroll-bar .increment-button,
+.sidebar-scroll .scroll-bar .decrement-button,
+.sidebar-scroll .scroll-bar .increment-arrow,
+.sidebar-scroll .scroll-bar .decrement-arrow {
+    -fx-padding: 0;
+    -fx-pref-height: 0;
+    -fx-background-color: transparent;
+}
+
+/* ---------- Conteneur ---------- */
+.sidebar {
+    -fx-background-color: #ffffff;
+    -fx-padding: 0 0 22 0;
+    -fx-font-family: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ---------- Logo ---------- */
+.logo-icon {
+    -fx-fill: transparent;
+    -fx-stroke: #0f62fe;
+    -fx-stroke-width: 1.6;
+}
+.logo-text {
+    -fx-text-fill: #0f62fe;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+/* ---------- Items de navigation ---------- */
+.nav-item {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-border-width: 0;
+    -fx-alignment: CENTER_LEFT;
+    -fx-content-display: LEFT;
+    -fx-graphic-text-gap: 20;
+    -fx-padding: 0 0 0 47;
+    -fx-pref-height: 52;
+    -fx-min-height: 52;
+    -fx-text-fill: #000000;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+.nav-item:hover { -fx-background-color: #f4f4f4; }
+
+/* Actif : barre bleue à gauche + fond bleu clair + texte/icône bleus */
+.nav-item:selected {
+    -fx-background-color: #0f62fe, #e7f0ff;
+    -fx-background-insets: 0, 0 0 0 3;
+    -fx-text-fill: #0f62fe;
+}
+
+/* Icônes (contour par défaut) */
+.nav-icon {
+    -fx-fill: transparent;
+    -fx-stroke: #21272a;
+    -fx-stroke-width: 1.6;
+    -fx-stroke-line-join: round;
+}
+.nav-icon-filled { -fx-fill: #21272a; -fx-stroke: transparent; }
+.nav-item:selected .nav-icon        { -fx-stroke: #0f62fe; }
+.nav-item:selected .nav-icon-filled { -fx-fill: #0f62fe; -fx-stroke: transparent; }
+
+/* ---------- Dossier « Films » ---------- */
+/* Films n'est jamais surligné en bleu : il sert seulement à ouvrir/fermer le dossier */
+.folder-toggle:selected,
+.folder-toggle:selected:hover {
+    -fx-background-color: #f4f4f4;
+    -fx-background-insets: 0;
+    -fx-text-fill: #000000;
+}
+.folder-toggle:selected .nav-icon { -fx-stroke: #21272a; }
+
+.chevron {
+    -fx-fill: transparent;
+    -fx-stroke: #21272a;
+    -fx-stroke-width: 1.6;
+}
+
+.folder-content { -fx-background-color: #fafafa; }
+
+.sub-item {
+    -fx-pref-height: 40;
+    -fx-min-height: 40;
+    -fx-padding: 0 0 0 89;
+    -fx-graphic-text-gap: 8;
+    -fx-font-size: 12px;
+}
+.file-icon {
+    -fx-fill: transparent;
+    -fx-stroke: #21272a;
+    -fx-stroke-width: 1.2;
+    -fx-stroke-line-join: round;
+}
+.sub-item:selected .file-icon { -fx-stroke: #0f62fe; }
+
+/* ---------- Séparateurs ---------- */
+.sidebar-separator { -fx-padding: 0; }
+.sidebar-separator .line {
+    -fx-border-color: #dddddd transparent transparent transparent;
+    -fx-border-width: 1 0 0 0;
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+/* ---------- Prochaines séances ---------- */
+.section-title {
+    -fx-text-fill: #000000;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.session-card {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 12;
+    -fx-border-color: #cfcfcf;
+    -fx-border-radius: 12;
+    -fx-border-width: 1;
+    -fx-padding: 0 7 0 12;
+    -fx-pref-height: 36;
+    -fx-min-height: 36;
+    -fx-max-height: 36;
+}
+.session-name {
+    -fx-text-fill: #000000;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+.time-badge {
+    -fx-background-color: #d4e3ff;
+    -fx-background-radius: 10;
+    -fx-text-fill: #0f62fe;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-padding: 2 8 2 8;
+}
+
+.connector { -fx-background-color: #dfdfdf; }
+.dot       { -fx-fill: #000000; }
+
+/* ---------- Setting ---------- */
+.setting-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+    -fx-alignment: CENTER_LEFT;
+    -fx-content-display: LEFT;
+    -fx-graphic-text-gap: 24;
+    -fx-padding: 22 0 0 30;
+    -fx-text-fill: #000000;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+.setting-button:hover { -fx-background-color: #f4f4f4; }
+.setting-icon { -fx-fill: #21272a; }

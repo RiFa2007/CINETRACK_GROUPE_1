@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+
+<!-- Page générique vide : modèle à dupliquer pour créer Films, Séance, Salle, Setting... -->
+<VBox alignment="CENTER" spacing="12" style="-fx-background-color: transparent;">
+
+    <Label text="Page" style="-fx-font-size: 26; -fx-font-weight: bold; -fx-text-fill: #222;"/>
+    <Label text="Contenu à venir." style="-fx-font-size: 14; -fx-text-fill: #777;"/>
+
+</VBox>

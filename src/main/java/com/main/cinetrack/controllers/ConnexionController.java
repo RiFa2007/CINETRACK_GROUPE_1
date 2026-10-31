@@ -14,7 +14,7 @@ public class ConnexionController {
 
     public void changeRoot(){
         try {
-            App.setRoot("inprogress");
+            App.setRoot("App");
         }
         catch (Exception e){
             System.err.println(e.getMessage());

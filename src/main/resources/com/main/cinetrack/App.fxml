@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.GridPane?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.main.cinetrack.controllers.MainController"
-            prefHeight="400.0" prefWidth="600.0">
-
-</AnchorPane>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<GridPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml"
+          fx:controller="com.main.cinetrack.controllers.MainController"
+          style="-fx-background-color: #EDEFF3;">
+    <!-- 20% navbar / 80% contenu -->
+    <columnConstraints>
+        <ColumnConstraints percentWidth="20"/>
+        <ColumnConstraints percentWidth="80"/>
+    </columnConstraints>
+    <!-- Navbar : 20% largeur, 100% hauteur -->
+    <fx:include source="navbar.fxml" fx:id="navbar" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+    <!-- Zone de contenu : les pages sont chargées ici -->
+    <StackPane fx:id="contentArea" GridPane.columnIndex="1" GridPane.rowIndex="0">
+        <fx:include source="home.fxml"/>
+    </StackPane>
+</GridPane>

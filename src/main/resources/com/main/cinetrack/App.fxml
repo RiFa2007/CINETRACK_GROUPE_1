@@ -11,7 +11,7 @@
         <ColumnConstraints percentWidth="80"/>
     </columnConstraints>
     <!-- Navbar : 20% largeur, 100% hauteur -->
-    <fx:include source="navbar.fxml" fx:id="navbar" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+    <fx:include source="navbar.fxml" fx:id="navbar" GridPane.columnIndex="0" GridPane.rowIndex="0"  />
     <!-- Zone de contenu : les pages sont chargées ici -->
     <StackPane fx:id="contentArea" GridPane.columnIndex="1" GridPane.rowIndex="0">
         <fx:include source="home.fxml"/>

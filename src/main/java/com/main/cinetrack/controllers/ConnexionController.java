@@ -11,7 +11,7 @@ public class ConnexionController {
 
     @FXML
     private Button button;
-
+    /* TEMPORAIRE */
     public void changeRoot(){
         try {
             App.setRoot("App");

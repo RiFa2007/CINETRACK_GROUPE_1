@@ -32,6 +32,7 @@ public class App extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("/com/main/cinetrack/login.fxml"));
         scene = new Scene(fxmlLoader.load());
         primaryStage.setScene(scene);
+        primaryStage.setResizable(false);
         primaryStage.show();
     }
 

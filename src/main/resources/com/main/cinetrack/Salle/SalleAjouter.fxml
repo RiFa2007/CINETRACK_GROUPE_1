@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="popUp" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
+    <TextField fx:id="nom"/>
+    <Pane fx:id="conteneur"/>
+</VBox>

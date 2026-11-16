@@ -10,9 +10,9 @@ import java.io.IOException;
 public class MainController {
 
     @FXML
-    private StackPane contentArea;              // injecté par FXMLLoader (champ d'instance)
+    private StackPane contentArea;
 
-    private static StackPane staticContentArea; // utilisé par changePage()
+    private static StackPane staticContentArea;
 
     @FXML
     public void initialize() {

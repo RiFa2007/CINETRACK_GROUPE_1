@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane fx:id="Conteneur" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
+    <VBox>
+        <TextField fx:id="bar_de_rechreche"/>
+        <TableView fx:id="ListSeances"/>
+        <Button fx:id="ajouter" text="Ajouter"/>
+    </VBox>
+</StackPane>

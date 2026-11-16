@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+
+<!-- Le diagramme indique "FormContainer" sans type : non ajouté (le conteneur racine pourrait en tenir lieu) -->
+<!-- Heure devrait être un TimePicker et nb_place_disponible un NumberTextField (non standard en JavaFX) : TextField utilisé en attendant -->
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
+    <ChoiceBox fx:id="Film"/>
+    <ChoiceBox fx:id="Salle"/>
+    <DatePicker fx:id="Date"/>
+    <TextField fx:id="Heure"/>
+    <TextField fx:id="nb_place_disponible"/>
+</VBox>

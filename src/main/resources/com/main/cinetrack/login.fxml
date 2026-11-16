@@ -45,7 +45,7 @@
             <VBox.margin><Insets top="30.0"/></VBox.margin>
 
             <Label text="Login" styleClass="field-label"/>
-            <TextField promptText="Entrez votre login" styleClass="field-input">
+            <TextField promptText="Entrez votre login" styleClass="field-input" fx:id="login">
                 <VBox.margin><Insets top="6.0"/></VBox.margin>
             </TextField>
 
@@ -56,10 +56,10 @@
                 <VBox.margin><Insets top="6.0"/></VBox.margin>
                 <SVGPath styleClass="pwd-icon"
                          content="M0 0 H12 V7 H0 Z M2 3.5 H3 M5.5 3.5 H6.5 M9 3.5 H10"/>
-                <PasswordField text="12345678" styleClass="field-input-inner" HBox.hgrow="ALWAYS"/>
+                <PasswordField text="12345678" styleClass="field-input-inner" HBox.hgrow="ALWAYS" fx:id="password"/>
             </HBox>
 
-            <Button text="Se connecter" fx:id="button" styleClass="login-button" maxWidth="Infinity" onAction="#changeRoot">
+            <Button text="Se connecter" fx:id="button" styleClass="login-button" maxWidth="Infinity" onAction="#login">
                 <VBox.margin><Insets top="26.0"/></VBox.margin>
             </Button>
         </VBox>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+
+<!-- Le diagramme indique aussi "FilmCard" et "attribute" sans type/nom précis : non ajoutés -->
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.main.cinetrack.controllers.FilmControllers.FilmConsultationController">
+    <TextField fx:id="bar_de_recherche"/>
+    <ChoiceBox fx:id="filtre"/>
+</VBox>

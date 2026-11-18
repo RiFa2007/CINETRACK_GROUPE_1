@@ -4,6 +4,7 @@ module com.main.cinetrack  {
     requires java.sql;
     requires io.github.cdimascio.dotenv.java;
     requires java.rmi;
+    requires jfxtras.controls;
 
 
     opens com.main.cinetrack to javafx.fxml;

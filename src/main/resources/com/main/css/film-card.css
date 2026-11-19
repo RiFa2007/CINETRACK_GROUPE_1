@@ -1,0 +1,29 @@
+.film-card {
+    -fx-background-color: white;
+    -fx-background-radius: 30;
+}
+
+.film-info {
+    -fx-spacing: 6;
+    -fx-padding: 26 40 10 40; /* haut droite bas gauche */
+}
+
+.film-title {
+    -fx-font-family: "Roboto";
+    -fx-font-weight: bold;
+    -fx-font-size: 24px;
+    -fx-text-fill: #222222;
+}
+
+.film-description {
+    -fx-font-family: "Roboto";
+    -fx-font-size: 16px;
+    -fx-text-fill: #6b6f76;
+}
+
+.film-rating {
+    -fx-font-family: "Roboto";
+    -fx-font-size: 16px;
+    -fx-text-fill: #e02020;
+    -fx-padding: 0 0 0 15; /* remplace VBox.margin */
+}

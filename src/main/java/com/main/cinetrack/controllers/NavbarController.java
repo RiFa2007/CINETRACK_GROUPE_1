@@ -11,8 +11,9 @@ public class NavbarController {
         }
     }
     public void goFilms(){
+        String filmDirectory = "film/";
         try {
-            MainController.changePage("page");
+            MainController.changePage(filmDirectory+"film_consultation");
         }catch (Exception e) {
 //            MainController.afficherMessage()
             System.out.println(e.getMessage());

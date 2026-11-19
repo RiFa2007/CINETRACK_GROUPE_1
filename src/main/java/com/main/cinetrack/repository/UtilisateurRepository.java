@@ -1,7 +1,8 @@
 package com.main.cinetrack.repository;
 
 import java.util.List;
-import com.main.cinetrack.model.Utilisateur;
+
+import com.main.cinetrack.model.User;
 import com.main.cinetrack.database.DataBaseConnexion;
 
 public class UtilisateurRepository implements IUtilisateurRepository {
@@ -13,12 +14,12 @@ public class UtilisateurRepository implements IUtilisateurRepository {
     }
 
     @Override
-    public void ajouter(Utilisateur utilisateur) {
+    public void ajouter(User utilisateur) {
         throw new UnsupportedOperationException("Not implemented yet");
     }
 
     @Override
-    public void modifier(Utilisateur utilisateur) {
+    public void modifier(User utilisateur) {
         throw new UnsupportedOperationException("Not implemented yet");
     }
 
@@ -28,12 +29,12 @@ public class UtilisateurRepository implements IUtilisateurRepository {
     }
 
     @Override
-    public Utilisateur findById(int id) {
+    public User findById(int id) {
         throw new UnsupportedOperationException("Not implemented yet");
     }
 
     @Override
-    public List<Utilisateur> findAll() {
+    public List<User> findAll() {
         throw new UnsupportedOperationException("Not implemented yet");
     }
 }

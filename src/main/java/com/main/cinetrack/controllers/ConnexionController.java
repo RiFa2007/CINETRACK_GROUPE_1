@@ -23,6 +23,6 @@ public class ConnexionController {
     }
 
     public void login(ActionEvent actionEvent) {
-        // A Implementer
+        changeRoot();
     }
 }

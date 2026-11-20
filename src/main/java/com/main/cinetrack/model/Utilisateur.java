@@ -1,20 +1,21 @@
 package com.main.cinetrack.model;
 
-public class User {
+public class Utilisateur {
     private String userName;
     private String mp;
-    private Boolean admin ;
     private int id;
+    private Role role;
 
-    public User(String userName, String mp, Boolean admin ) {
+    public Utilisateur(){}
+
+    public Utilisateur(String userName, String mp,Role role) {
         this.userName = userName;
         this.mp = mp;
-        this.admin = admin;
+
     }
-    public User(String userName, String mp, Boolean admin, int id) {
+    public Utilisateur(String userName, String mp, int id,Role role) {
         this.userName = userName;
         this.mp = mp;
-        this.admin = admin;
         this.id = id;
     }
 
@@ -25,9 +26,7 @@ public class User {
     public String getMp() {
         return mp;
     }
-    public Boolean isAdmin(){
-        return admin;
-    }
+    public Role getRole(){return role;}
     public int getId() {
         return id;
     }

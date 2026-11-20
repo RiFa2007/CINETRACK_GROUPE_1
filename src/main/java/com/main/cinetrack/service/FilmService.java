@@ -4,7 +4,7 @@ import java.util.List;
 import com.main.cinetrack.model.Film;
 import com.main.cinetrack.repository.IFilmRepository;
 
-public class FilmService implements IFilmService {
+public class FilmService {
 
     private final IFilmRepository filmRepository;
 
@@ -12,39 +12,24 @@ public class FilmService implements IFilmService {
         this.filmRepository = filmRepository;
     }
 
-    @Override
     public boolean verifierAjoutFilm(Film film) {
-        return film != null
-                && film.getNomFilm() != null && !film.getNomFilm().isBlank()
-                && film.getDureeFilm() > 0;
+        return false;
     }
 
-    @Override
-    public boolean ajouterFilm(Film film) {
-        if (!verifierAjoutFilm(film)) {
-            return false;
-        }
-        filmRepository.ajouter(film);
-        return true;
+     public void ajouterFilm(Film film) {
+
     }
 
-    @Override
     public boolean supprimerFilm(int idFilm) {
-        if (filmRepository.findById(idFilm) == null) {
-            return false;
-        }
-        filmRepository.supprimer(idFilm);
         return true;
     }
 
-    @Override
     public List<Film> listeFilm() {
         return filmRepository.findAll();
     }
 
-    @Override
+    // Demande à judi ce que c'est parce que j'en sais rien
     public boolean verifierListefilm() {
-        List<Film> films = filmRepository.findAll();
-        return films != null && !films.isEmpty();
+        return true;
     }
 }

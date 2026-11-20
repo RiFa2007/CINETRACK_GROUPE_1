@@ -1,8 +1,7 @@
 package com.main.cinetrack.service;
 
 import com.main.cinetrack.model.Role;
-import com.main.cinetrack.model.User;
-import com.main.cinetrack.repository.IUserRepository;
+import com.main.cinetrack.model.Utilisateur;
 import com.main.cinetrack.repository.IUtilisateurRepository;
 
 public class UtilisateurService  {
@@ -13,7 +12,7 @@ public class UtilisateurService  {
         this.userRepository = userRepository;
     }
 
-    public void ajouterCaissier(Utilisateur user) {
+    public void ajouterCaissierajouterCaissier(Utilisateur user) {
 
     }
 
@@ -21,7 +20,7 @@ public class UtilisateurService  {
         return true;
     }
 
- 
+
     public void modifierResponsabiliter(int idUser, Role nouveauRole) {
 
     }

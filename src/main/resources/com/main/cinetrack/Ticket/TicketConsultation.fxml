@@ -4,9 +4,19 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TableColumn?>
 
 <VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
     <TextField fx:id="bar_de_recherche"/>
-    <TableView fx:id="ListTicket"/>
+    <TableView fx:id="ListTicket">
+    <columns>
+        <TableColumn prefWidth="75.0" text="HeureSeance" />
+        <TableColumn prefWidth="75.0" text="Film" />
+        <TableColumn prefWidth="75.0" text="Date" />
+        <TableColumn prefWidth="75.0" text="Salle" />
+    </columns>
+    <columnResizePolicy>
+        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+    </columnResizePolicy></TableView>
     <Button fx:id="Ajouter" text="Ajouter"/>
 </VBox>

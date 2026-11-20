@@ -22,14 +22,8 @@ public class FilmConsultationController {
     public void initialize() {
         filtre.getItems().setAll(FiltreFilm.values());
 
-//        Film f = new Film(1,
-//                "String titre",
-//                "String genre",
-//                100,
-//                4,
-//                "String synopsis String synopsisString synopsisString synopsis"
-//                );   // chemin absolu
-//        listFilms.add(new FilmCard(f));
+        Film f = new Film();   // chemin absolu
+        listFilms.add(new FilmCard(f));
 
         afficherFilms();
     }

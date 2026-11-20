@@ -2,18 +2,18 @@ package com.main.cinetrack.repository;
 
 import java.util.List;
 
-import com.main.cinetrack.model.User;
-import com.main.cinetrack.model.User;
+import com.main.cinetrack.model.Utilisateur;
+import com.main.cinetrack.model.Utilisateur;
 
 public interface IUtilisateurRepository {
 
-    void ajouter(User utilisateur);
+    void ajouter(Utilisateur utilisateur);
 
-    void modifier(User utilisateur);
+    void modifier(Utilisateur utilisateur);
 
     void supprimer(int id);
 
-    User findById(int id);
+    Utilisateur findById(int id);
 
-    List<User> findAll();
+    List<Utilisateur> findAll();
 }

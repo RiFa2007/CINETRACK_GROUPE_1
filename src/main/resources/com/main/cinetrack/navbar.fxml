@@ -1,23 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <!-- FICHIER NAV BAR (fusion navbar + sidebar) -->
-<?import javafx.scene.Group?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Separator?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Region?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Line?>
-<?import javafx.scene.shape.SVGPath?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
 
 <!-- Pas de fx:controller sur les handlers : ils sont définis dans NavbarController -->
 
-<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml"
-      spacing="8"
-      stylesheets="@../css/sidebar.css"
-      fx:controller="com.main.cinetrack.controllers.NavbarController"
-      fx:id="navBar">
+<VBox fx:id="navBar" prefHeight="577.0" prefWidth="156.0" spacing="8" stylesheets="@../css/sidebar.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.cinetrack.controllers.NavbarController">
 
     <!-- Logo (le titre CINETRACK est déjà dans l'image) -->
     <HBox alignment="CENTER">
@@ -28,90 +21,83 @@
         </ImageView>
     </HBox>
 
-    <Region prefHeight="10"/>
+    <Region prefHeight="10" />
 
     <!-- Items du menu -->
 
     <!-- Home (actif) -->
-    <HBox alignment="CENTER_LEFT" spacing="12" onMouseClicked="#goHome"
-          style="-fx-background-color: #E8F0FE; -fx-background-radius: 8; -fx-padding: 10 14 10 14; -fx-border-color: #2E6BE6; -fx-border-width: 0 0 0 3; -fx-border-style: solid none none none; -fx-cursor: hand;">
-        <SVGPath content="M11 0 L22 6 V19 Q22 22 19 22 H3 Q0 22 0 19 V6 Z" styleClass="nav-icon nav-icon-filled"/>
-        <Label text="Home" style="-fx-text-fill: #2E6BE6; -fx-font-weight: bold;"/>
+    <HBox alignment="CENTER_LEFT" onMouseClicked="#goHome" spacing="12" style="-fx-background-color: #E8F0FE; -fx-background-radius: 8; -fx-padding: 10 14 10 14; -fx-border-color: #2E6BE6; -fx-border-width: 0 0 0 3; -fx-border-style: solid none none none; -fx-cursor: hand;">
+        <SVGPath content="M11 0 L22 6 V19 Q22 22 19 22 H3 Q0 22 0 19 V6 Z" styleClass="nav-icon nav-icon-filled" />
+        <Label style="-fx-text-fill: #2E6BE6; -fx-font-weight: bold;" text="Home" />
     </HBox>
 
     <!-- Films -->
-    <HBox alignment="CENTER_LEFT" spacing="12" onMouseClicked="#goFilms"
-          style="-fx-padding: 10 14 10 14; -fx-cursor: hand;">
+    <HBox alignment="CENTER_LEFT" onMouseClicked="#goFilms" spacing="12" style="-fx-padding: 10 14 10 14; -fx-cursor: hand;">
         <!-- Group : plusieurs SVGPath ne peuvent pas être mis directement comme un seul graphic -->
         <Group>
-            <SVGPath content="M7.5 5H22.5C23.8807 5 25 6.11929 25 7.5V22.5C25 23.8807 23.8807 25 22.5 25H7.5C6.11929 25 5 23.8807 5 22.5V7.5C5 6.11929 6.11929 5 7.5 5Z" fill="TRANSPARENT" stroke="#21272A" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="2"/>
+            <SVGPath content="M7.5 5H22.5C23.8807 5 25 6.11929 25 7.5V22.5C25 23.8807 23.8807 25 22.5 25H7.5C6.11929 25 5 23.8807 5 22.5V7.5C5 6.11929 6.11929 5 7.5 5Z" fill="TRANSPARENT" stroke="#21272A" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="2" />
             <!-- Lignes verticales -->
-            <SVGPath content="M10 5V25" fill="TRANSPARENT" stroke="#21272A" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="2"/>
-            <SVGPath content="M20 5V25" fill="TRANSPARENT" stroke="#21272A" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="2"/>
+            <SVGPath content="M10 5V25" fill="TRANSPARENT" stroke="#21272A" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="2" />
+            <SVGPath content="M20 5V25" fill="TRANSPARENT" stroke="#21272A" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="2" />
             <!-- Lignes horizontales -->
-            <SVGPath content="M5 10H10" fill="TRANSPARENT" stroke="#21272A" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="2"/>
-            <SVGPath content="M5 20H10" fill="TRANSPARENT" stroke="#21272A" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="2"/>
-            <SVGPath content="M5 15H25" fill="TRANSPARENT" stroke="#21272A" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="2"/>
-            <SVGPath content="M20 10H25" fill="TRANSPARENT" stroke="#21272A" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="2"/>
-            <SVGPath content="M20 20H25" fill="TRANSPARENT" stroke="#21272A" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="2"/>
+            <SVGPath content="M5 10H10" fill="TRANSPARENT" stroke="#21272A" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="2" />
+            <SVGPath content="M5 20H10" fill="TRANSPARENT" stroke="#21272A" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="2" />
+            <SVGPath content="M5 15H25" fill="TRANSPARENT" stroke="#21272A" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="2" />
+            <SVGPath content="M20 10H25" fill="TRANSPARENT" stroke="#21272A" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="2" />
+            <SVGPath content="M20 20H25" fill="TRANSPARENT" stroke="#21272A" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="2" />
         </Group>
-        <Label text="Films" style="-fx-text-fill: #333;"/>
+        <Label style="-fx-text-fill: #333;" text="Films" />
     </HBox>
 
     <!-- Séance -->
-    <HBox alignment="CENTER_LEFT" spacing="12" onMouseClicked="#goSeance"
-          style="-fx-padding: 10 14 10 14; -fx-cursor: hand;">
-        <SVGPath content="M4 9 L6 22 H16 L18 9 Z M4 9 C0 9 0 4 5 4 C5 0 10 0 11 3 C13 0 19 1 17 5 C22 5 21 9 18 9" styleClass="nav-icon"/>
-        <Label text="Séance" style="-fx-text-fill: #333;"/>
+    <HBox alignment="CENTER_LEFT" onMouseClicked="#goSeance" spacing="12" style="-fx-padding: 10 14 10 14; -fx-cursor: hand;">
+        <SVGPath content="M4 9 L6 22 H16 L18 9 Z M4 9 C0 9 0 4 5 4 C5 0 10 0 11 3 C13 0 19 1 17 5 C22 5 21 9 18 9" styleClass="nav-icon" />
+        <Label style="-fx-text-fill: #333;" text="Séance" />
     </HBox>
 
     <!-- Salle -->
-    <HBox alignment="CENTER_LEFT" spacing="12" onMouseClicked="#goSalle"
-          style="-fx-padding: 10 14 10 14; -fx-cursor: hand;">
-        <SVGPath content="M4 10 V6 Q4 2 8 2 H14 Q18 2 18 6 V10 M2 10 Q0 10 0 12 V17 Q0 19 2 19 H20 Q22 19 22 17 V12 Q22 10 20 10 Q18 10 18 12 V14 H4 V12 Q4 10 2 10 M4 19 V22 M18 19 V22" styleClass="nav-icon"/>
-        <Label text="Salle" style="-fx-text-fill: #333;"/>
+    <HBox alignment="CENTER_LEFT" onMouseClicked="#goSalle" spacing="12" style="-fx-padding: 10 14 10 14; -fx-cursor: hand;">
+        <SVGPath content="M4 10 V6 Q4 2 8 2 H14 Q18 2 18 6 V10 M2 10 Q0 10 0 12 V17 Q0 19 2 19 H20 Q22 19 22 17 V12 Q22 10 20 10 Q18 10 18 12 V14 H4 V12 Q4 10 2 10 M4 19 V22 M18 19 V22" styleClass="nav-icon" />
+        <Label style="-fx-text-fill: #333;" text="Salle" />
     </HBox>
 
-    <Region prefHeight="10"/>
-    <Separator/>
-    <Region prefHeight="6"/>
+    <Region prefHeight="10" />
+    <Separator />
+    <Region prefHeight="6" />
 
     <!-- Prochaines séances (cartes de la navbar) -->
-    <Label text="Prochaines séances" style="-fx-font-weight: bold; -fx-font-size: 13; -fx-padding: 4 0 0 6;"/>
+    <Label style="-fx-font-weight: bold; -fx-font-size: 13; -fx-padding: 4 0 0 6;" text="Prochaines séances" />
 
-    <Region prefHeight="6"/>
+    <Region prefHeight="6" />
 
     <VBox alignment="CENTER" spacing="0">
-        <HBox alignment="CENTER_LEFT" spacing="10" maxWidth="Infinity"
-              style="-fx-background-color: white; -fx-background-radius: 20; -fx-padding: 8 12 8 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 6, 0, 0, 2);">
-            <Label text="Inception" style="-fx-text-fill: #333;"/>
-            <Region HBox.hgrow="ALWAYS"/>
-            <Label text="18h30" style="-fx-background-color: #DCE7FD; -fx-text-fill: #2E6BE6; -fx-font-weight: bold; -fx-background-radius: 10; -fx-padding: 3 10 3 10;"/>
+        <HBox alignment="CENTER_LEFT" maxWidth="Infinity" spacing="10" style="-fx-background-color: white; -fx-background-radius: 20; -fx-padding: 8 12 8 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 6, 0, 0, 2);">
+            <Label style="-fx-text-fill: #333;" text="Inception" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Label style="-fx-background-color: #DCE7FD; -fx-text-fill: #2E6BE6; -fx-font-weight: bold; -fx-background-radius: 10; -fx-padding: 3 10 3 10;" text="18h30" />
         </HBox>
 
-        <Line startX="0" endX="0" startY="0" endY="24" style="-fx-stroke: #C9D4EA; -fx-stroke-width: 1.5;"/>
+        <Line endX="0" endY="24" startX="0" startY="0" style="-fx-stroke: #C9D4EA; -fx-stroke-width: 1.5;" />
 
-        <HBox alignment="CENTER_LEFT" spacing="10" maxWidth="Infinity"
-              style="-fx-background-color: white; -fx-background-radius: 20; -fx-padding: 8 12 8 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 6, 0, 0, 2);">
-            <Label text="Call of d..." style="-fx-text-fill: #333;"/>
-            <Region HBox.hgrow="ALWAYS"/>
-            <Label text="20H30" style="-fx-background-color: #DCE7FD; -fx-text-fill: #2E6BE6; -fx-font-weight: bold; -fx-background-radius: 10; -fx-padding: 3 10 3 10;"/>
+        <HBox alignment="CENTER_LEFT" maxWidth="Infinity" spacing="10" style="-fx-background-color: white; -fx-background-radius: 20; -fx-padding: 8 12 8 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 6, 0, 0, 2);">
+            <Label style="-fx-text-fill: #333;" text="Call of d..." />
+            <Region HBox.hgrow="ALWAYS" />
+            <Label style="-fx-background-color: #DCE7FD; -fx-text-fill: #2E6BE6; -fx-font-weight: bold; -fx-background-radius: 10; -fx-padding: 3 10 3 10;" text="20H30" />
         </HBox>
 
-        <Label text="•••" style="-fx-text-fill: #666; -fx-padding: 8 0 0 0;"/>
+        <Label style="-fx-text-fill: #666; -fx-padding: 8 0 0 0;" text="•••" />
     </VBox>
 
     <!-- Pousse "Setting" vers le bas -->
-    <Region VBox.vgrow="ALWAYS"/>
+    <Region VBox.vgrow="ALWAYS" />
 
-    <Separator/>
-    <Region prefHeight="4"/>
+    <Separator />
+    <Region prefHeight="4" />
 
     <!-- Setting -->
-    <HBox alignment="CENTER_LEFT" spacing="12" onMouseClicked="#goSetting"
-          style="-fx-padding: 10 14 10 14; -fx-cursor: hand;">
-        <SVGPath content="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58a.49.49 0 0 0 .12-.61l-1.92-3.32a.488.488 0 0 0-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54a.484.484 0 0 0-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58a.49.49 0 0 0-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z" fillRule="EVEN_ODD" styleClass="setting-icon"/>
-        <Label text="Setting" style="-fx-text-fill: #333;"/>
+    <HBox alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" onMouseClicked="#goSetting" spacing="12" style="-fx-padding: 10 14 10 14; -fx-cursor: hand;">
+        <SVGPath content="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58a.49.49 0 0 0 .12-.61l-1.92-3.32a.488.488 0 0 0-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54a.484.484 0 0 0-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58a.49.49 0 0 0-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z" fillRule="EVEN_ODD" styleClass="setting-icon" />
+        <Label style="-fx-text-fill: #333;" text="Setting" />
     </HBox>
 
 </VBox>

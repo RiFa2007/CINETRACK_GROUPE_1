@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Rectangle?>
+
+<HBox styleClass="film-card" stylesheets="@../../css/film-card.css"
+      maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="161.0" prefWidth="1095.0"
+      xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <ImageView fx:id="imageFilm" fitHeight="161.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="false">
+            <clip>
+                <Rectangle arcHeight="60.0" arcWidth="60.0" height="161.0" width="190.0" />
+            </clip>
+        </ImageView>
+
+        <VBox styleClass="film-info" HBox.hgrow="ALWAYS">
+            <children>
+                <Label fx:id="title" styleClass="film-title" text="Titre" />
+                <Label fx:id="description" styleClass="film-description" wrapText="true" text="Description" />
+                <Label fx:id="note" styleClass="film-rating" text="Note" />
+            </children>
+        </VBox>
+    </children>
+</HBox>

@@ -14,34 +14,24 @@ public class Film {
     private int duree;       // en minutes
     private double note;     // entre 0 et 10
     private String synopsis;
+    private String imagePath;
+
 
     // -------------------------------------------------------------------------
     // Constructeur vide
     // -------------------------------------------------------------------------
     public Film() {
+
     }
 
-    // -------------------------------------------------------------------------
-    // Constructeur complet (avec id) — utilisé pour les SELECT
-    // -------------------------------------------------------------------------
-    public Film(int idFilm, String titre, String genre, int duree, double note, String synopsis) {
+    public Film(int idFilm, String titre, String genre, int duree, double note, String synopsis, String imagePath) {
         this.idFilm   = idFilm;
         this.titre    = titre;
         this.genre    = genre;
         this.duree    = duree;
         this.note     = note;
         this.synopsis = synopsis;
-    }
-
-    // -------------------------------------------------------------------------
-    // Constructeur sans id — utilisé pour les INSERT
-    // -------------------------------------------------------------------------
-    public Film(String titre, String genre, int duree, double note, String synopsis) {
-        this.titre    = titre;
-        this.genre    = genre;
-        this.duree    = duree;
-        this.note     = note;
-        this.synopsis = synopsis;
+        this.imagePath = imagePath;
     }
 
     // -------------------------------------------------------------------------
@@ -78,6 +68,9 @@ public class Film {
         return synopsis;
     }
 
+    /** @return le chemin de l'image de l'affiche du film*/
+    public String getImagePath(){return imagePath;}
+
     // -------------------------------------------------------------------------
     // Setters
     // -------------------------------------------------------------------------
@@ -101,6 +94,9 @@ public class Film {
     public void setDuree(int duree) {
         this.duree = duree;
     }
+
+    /** @param imagePath l'affiche optionnelle du film  */
+    public void setImage(String imagePath){this.imagePath = imagePath;}
 
     // -------------------------------------------------------------------------
     // getDureeFormatee — Retourne la durée au format "Xh Ymin"

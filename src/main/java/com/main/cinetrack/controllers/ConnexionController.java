@@ -1,6 +1,7 @@
 package com.main.cinetrack.controllers;
 
 import com.main.cinetrack.main.App;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -11,14 +12,17 @@ public class ConnexionController {
 
     @FXML
     private Button button;
+
     /* TEMPORAIRE */
-    public void changeRoot(){
+    public void changeRoot() {
         try {
             App.setRoot("App");
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             System.err.println(e.getMessage());
         }
     }
 
+    public void login(ActionEvent actionEvent) {
+        changeRoot();
+    }
 }

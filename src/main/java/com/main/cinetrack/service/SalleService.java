@@ -16,13 +16,38 @@ public class SalleService  {
         this.seanceRepository = seanceRepository ;
     }
 
+    public void supprimerSalle(int id) {
+        // On va rajouter des controlles de droit plus tard
+        salleRepository.supprimer(id);
+    }
+
+    public void modifierSalle(Salle s) throws Exception {
+        if(s.getCapacite() < 0) {
+            throw new Exception("La capacité de la salle doit être strictement positive");
+        }
+        if(s.getNom().isEmpty()){
+            throw new Exception("Le nom de la salle ne doit pas être vide");
+        }
+        salleRepository.modifier(s);
+    }
+
+    public void ajouterSalle(Salle s) throws Exception {
+        if(s.getCapacite() < 0) {
+            throw new Exception("La capacité de la salle doit être strictement positive");
+        }
+        if(s.getNom().isEmpty()){
+            throw new Exception("Le nom de la salle ne doit pas être vide");
+        }
+        salleRepository.ajouter(s);
+    }
+
     /** Une salle est disponible si aucune séance n'y est prévue à cette date. */
     public boolean disponibiliteSalle(int idSalle, Date date) {
         return false;
     }
 
      public List<Salle> listerSalle() {
-        return null;
+        return  salleRepository.findAll();
     }
 
      public boolean validerCapacite(int idSalle, int nombrePlaces) {

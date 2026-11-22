@@ -2,6 +2,9 @@ package com.main.cinetrack.service;
 
 import java.util.Date;
 import java.util.List;
+
+import com.main.cinetrack.exception.CapaciteNegativeException;
+import com.main.cinetrack.exception.NomInvalideException;
 import com.main.cinetrack.model.Salle;
 import com.main.cinetrack.repository.ISalleRepository;
 import com.main.cinetrack.repository.ISeanceRepository;
@@ -21,24 +24,23 @@ public class SalleService  {
         salleRepository.supprimer(id);
     }
 
-    public void modifierSalle(Salle s) throws Exception {
-        if(s.getCapacite() < 0) {
-            throw new Exception("La capacité de la salle doit être strictement positive");
-        }
-        if(s.getNom().isEmpty()){
-            throw new Exception("Le nom de la salle ne doit pas être vide");
-        }
+    public void modifierSalle(Salle s) throws NomInvalideException,CapaciteNegativeException {
+        valideSalle(s);
         salleRepository.modifier(s);
     }
 
-    public void ajouterSalle(Salle s) throws Exception {
+    public void ajouterSalle(Salle s) throws NomInvalideException,CapaciteNegativeException {
+        valideSalle(s);
+        salleRepository.ajouter(s);
+    }
+
+    public void valideSalle(Salle s) throws NomInvalideException,CapaciteNegativeException{
         if(s.getCapacite() < 0) {
-            throw new Exception("La capacité de la salle doit être strictement positive");
+            throw new CapaciteNegativeException("La capacité de la salle doit être strictement positive");
         }
         if(s.getNom().isEmpty()){
-            throw new Exception("Le nom de la salle ne doit pas être vide");
+            throw new NomInvalideException("Le nom de la salle ne doit pas être vide");
         }
-        salleRepository.ajouter(s);
     }
 
     /** Une salle est disponible si aucune séance n'y est prévue à cette date. */

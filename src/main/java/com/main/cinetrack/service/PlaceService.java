@@ -1,5 +1,6 @@
 package com.main.cinetrack.service;
 
+import com.main.cinetrack.exception.PlaceReserveeException;
 import com.main.cinetrack.model.Place;
 import com.main.cinetrack.repository.IPlaceRepository;
 
@@ -22,9 +23,9 @@ public class PlaceService {
     public List<Place> listerPlace(){
         return  placeRepository.findAll();
     }
-    public void reserverPlace(Place p) throws Exception{
+    public void reserverPlace(Place p) throws PlaceReserveeException{
         if(p.getReservee()){
-            throw new Exception("La salle est deja reservé");
+            throw new PlaceReserveeException("La salle est deja reservé");
         }
         placeRepository.reserverPlace();
     }

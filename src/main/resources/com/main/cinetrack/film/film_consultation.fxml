@@ -1,19 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox prefHeight="349.0" prefWidth="446.0" spacing="10.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.cinetrack.controllers.FilmControllers.FilmConsultationController">
-   <FlowPane alignment="CENTER_LEFT" columnHalignment="CENTER" prefHeight="46.0" prefWidth="440.0" rowValignment="BASELINE">
-      <children>
-          <TextField fx:id="bar_de_recherche" />
-          <ChoiceBox fx:id="filtre" />
-      </children>
-   </FlowPane>
-    <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
-        <content>
-            <VBox fx:id="conteneurFilms" spacing="15.0" />
-        </content>
-    </ScrollPane>
-   <HBox prefHeight="100.0" prefWidth="200.0" />
+<VBox styleClass="root-pane" prefHeight="583.0" prefWidth="676.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" stylesheets="@../../css/films.css" fx:controller="com.main.cinetrack.controllers.FilmControllers.FilmConsultationController">
+    <padding>
+        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0"/>
+    </padding>
+
+    <fx:define>
+        <ToggleGroup fx:id="groupeFiltre"/>
+    </fx:define>
+
+    <!-- Barre de recherche + bouton filtre -->
+    <HBox alignment="CENTER_LEFT" spacing="15.0">
+        <children>
+            <HBox styleClass="search-box" alignment="CENTER_LEFT" spacing="8.0" HBox.hgrow="ALWAYS">
+                <children>
+                    <Region styleClass="icon-search"/>
+                    <TextField fx:id="bar_de_recherche" styleClass="search-field" HBox.hgrow="ALWAYS"/>
+                </children>
+            </HBox>
+            <Button fx:id="btnFiltre" styleClass="btn-filtre">
+                <graphic>
+                    <Region styleClass="icon-filtre"/>
+                </graphic>
+            </Button>
+        </children>
+    </HBox>
+
+    <!-- Titre + pastilles de filtre -->
+    <HBox alignment="CENTER_LEFT" spacing="15.0">
+        <children>
+            <Label text="Recherche de films" styleClass="titre-page"/>
+            <Label text="filtre :" styleClass="label-filtre">
+                <HBox.margin>
+                    <Insets left="30.0"/>
+                </HBox.margin>
+            </Label>
+            <ToggleButton fx:id="btnProgrammes" text="Programmés" styleClass="chip" toggleGroup="$groupeFiltre"/>
+            <ToggleButton fx:id="btnMieuxNotes" text="Mieux notés" styleClass="chip" toggleGroup="$groupeFiltre"/>
+        </children>
+    </HBox>
+
+    <!-- Tableau (remplace les cartes) -->
+    <TableView fx:id="tableFilms" styleClass="table-films" VBox.vgrow="ALWAYS">
+        <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+        </columnResizePolicy>
+        <columns>
+            <TableColumn fx:id="colTitre" text="Titre"/>
+            <TableColumn fx:id="colGenre" text="Genre"/>
+            <TableColumn fx:id="colDuree" text="Durée"/>
+            <TableColumn fx:id="colSynopsis" text="Synopsis"/>
+            <TableColumn fx:id="colNote" text="Note"/>
+        </columns>
+    </TableView>
 </VBox>

@@ -24,23 +24,8 @@ public class Film {
 
     }
 
-    // -------------------------------------------------------------------------
-    // Constructeur complet (avec id) — utilisé pour les SELECT
-    // -------------------------------------------------------------------------
     public Film(int idFilm, String titre, String genre, int duree, double note, String synopsis, String imagePath) {
         this.idFilm   = idFilm;
-        this.titre    = titre;
-        this.genre    = genre;
-        this.duree    = duree;
-        this.note     = note;
-        this.synopsis = synopsis;
-        this.imagePath = imagePath;
-    }
-
-    // -------------------------------------------------------------------------
-    // Constructeur sans id — utilisé pour les INSERT
-    // -------------------------------------------------------------------------
-    public Film(String titre, String genre, int duree, double note, String synopsis, String imagePath) {
         this.titre    = titre;
         this.genre    = genre;
         this.duree    = duree;

@@ -1,8 +1,10 @@
 package com.main.cinetrack.repository;
 
 import java.util.List;
+
 import com.main.cinetrack.model.Utilisateur;
 import com.main.cinetrack.database.DataBaseConnexion;
+import com.main.cinetrack.model.Utilisateur;
 
 public class UtilisateurRepository implements IUtilisateurRepository {
 

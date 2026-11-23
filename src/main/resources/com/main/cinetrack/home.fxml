@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<VBox alignment="CENTER" spacing="12" style="-fx-background-color: transparent;">
+<VBox alignment="CENTER" prefHeight="80.0" prefWidth="294.0" spacing="12" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
 
-    <Label text="Bienvenue sur Cinetrack" style="-fx-font-size: 26; -fx-font-weight: bold; -fx-text-fill: #222;"/>
-    <Label text="Sélectionnez une section dans la barre latérale." style="-fx-font-size: 14; -fx-text-fill: #777;"/>
+    <Label style="-fx-font-size: 26; -fx-font-weight: bold; -fx-text-fill: #222;" text="Bienvenue sur Cinetrack" />
+    <Label style="-fx-font-size: 14; -fx-text-fill: #777;" text="Sélectionnez une section dans la barre latérale." />
 
 </VBox>

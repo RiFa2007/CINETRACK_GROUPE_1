@@ -1,7 +1,7 @@
 package com.main.cinetrack.repository;
 
 import java.util.List;
-import com.main.cinetrack.model.Tarif;
+import com.main.cinetrack.enums.Tarif;
 
 public interface ITarifRepository {
 

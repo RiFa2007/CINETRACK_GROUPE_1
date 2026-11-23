@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<StackPane fx:id="Conteneur" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
+<StackPane fx:id="Conteneur" prefHeight="446.0" prefWidth="444.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.cinetrack.controllers.SalleController.SalleController">
     <VBox>
-        <TextField fx:id="bar_de_rechreche"/>
-        <TableView fx:id="ListSeances"/>
-        <Button fx:id="ajouter" text="Ajouter"/>
+      <children>
+           <TableView fx:id="ListSalle" prefHeight="307.0" prefWidth="236.0">
+            <columns>
+                <TableColumn prefWidth="75.0" text="id" />
+                <TableColumn prefWidth="75.0" text="nom" />
+                <TableColumn prefWidth="75.0" text="Modifier" />
+                <TableColumn prefWidth="75.0" text="Supprimer" />
+            </columns>
+            <columnResizePolicy>
+               <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+            </columnResizePolicy>
+         </TableView>
+      </children>
     </VBox>
 </StackPane>

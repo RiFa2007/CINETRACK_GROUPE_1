@@ -69,8 +69,6 @@ public class FilmConsultationController {
                 }
             });
 
-
-
             // 3. Charger les films puis les afficher
             chargerFilms();
             afficherFilms();

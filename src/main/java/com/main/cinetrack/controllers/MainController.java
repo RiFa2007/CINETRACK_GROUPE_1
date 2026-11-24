@@ -19,7 +19,7 @@ public class MainController {
         staticContentArea = contentArea;
     }
 
-    protected static void changePage(String page) throws IOException {
+    public static void changePage(String page) throws IOException {
         staticContentArea.getChildren().clear();
         FXMLLoader loader = new FXMLLoader(
                 MainController.class.getResource("/com/main/cinetrack/" + page + ".fxml"));

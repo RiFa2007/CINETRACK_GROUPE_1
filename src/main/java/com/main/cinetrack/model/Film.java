@@ -34,6 +34,16 @@ public class Film {
         this.imagePath = imagePath;
     }
 
+    // Constructeur sans id pour l'insertion.
+    public Film(String titre, String genre, int duree, double note, String synopsis, String imagePath) {
+        this.titre    = titre;
+        this.genre    = genre;
+        this.duree    = duree;
+        this.note     = note;
+        this.synopsis = synopsis;
+        this.imagePath = imagePath;
+    }
+
     // -------------------------------------------------------------------------
     // Getters
     // -------------------------------------------------------------------------

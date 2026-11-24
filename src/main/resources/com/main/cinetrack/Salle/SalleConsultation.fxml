@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<StackPane fx:id="Conteneur" prefHeight="446.0" prefWidth="444.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane fx:id="Conteneur" prefHeight="446.0" prefWidth="444.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.cinetrack.controllers.SalleController.SalleController">
     <VBox>
       <children>
            <TableView fx:id="ListSalle" prefHeight="307.0" prefWidth="236.0">

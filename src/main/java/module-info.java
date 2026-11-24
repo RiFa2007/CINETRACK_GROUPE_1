@@ -11,4 +11,9 @@ module com.main.cinetrack  {
     exports com.main.cinetrack.main;
     opens com.main.cinetrack.main to javafx.fxml;
     opens com.main.cinetrack.controllers to javafx.fxml;
+    opens com.main.cinetrack.controllers.message to javafx.fxml;
+    opens com.main.cinetrack.controllers.SalleController to javafx.fxml;
+    opens com.main.cinetrack.controllers.FilmControllers to javafx.fxml;
+    opens com.main.cinetrack.controllers.TicketController to javafx.fxml;
+    opens com.main.cinetrack.model to javafx.base;
 }

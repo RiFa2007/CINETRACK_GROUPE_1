@@ -4,7 +4,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox styleClass="root-pane" prefHeight="583.0" prefWidth="676.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" stylesheets="@../../css/films.css" fx:controller="com.main.cinetrack.controllers.FilmControllers.FilmConsultationController">
+<VBox styleClass="root-pane" prefHeight="583.0" prefWidth="676.0" spacing="20.0"
+      xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" stylesheets="@../../css/films.css"
+      fx:controller="com.main.cinetrack.controllers.FilmControllers.FilmConsultationController">
     <padding>
         <Insets bottom="30.0" left="30.0" right="30.0" top="30.0"/>
     </padding>
@@ -44,10 +46,14 @@
         </children>
     </HBox>
 
+    <VBox>
+        <Button onAction="#PageAjout" text="Ajouter un film"/>
+    </VBox>
+
     <!-- Tableau (remplace les cartes) -->
     <TableView fx:id="tableFilms" styleClass="table-films" VBox.vgrow="ALWAYS">
         <columnResizePolicy>
-            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
         </columnResizePolicy>
         <columns>
             <TableColumn fx:id="colTitre" text="Titre"/>

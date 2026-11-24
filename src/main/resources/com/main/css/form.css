@@ -1,0 +1,108 @@
+.form-root {
+    -fx-background-color: white;
+    -fx-font-family: "Lato", "Segoe UI", "Arial";
+}
+
+.form-titre {
+    -fx-font-size: 40px;
+    -fx-text-fill: #161616;
+}
+
+.form-sous-titre {
+    -fx-font-size: 14px;
+    -fx-text-fill: #6f6f6f;
+}
+
+.form-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: black;
+    -fx-padding: 12 0 0 0;
+}
+
+.form-petit {
+    -fx-font-size: 12px;
+    -fx-text-fill: black;
+}
+
+/* Champs : fond gris clair, trait fin en bas */
+.form-champ {
+    -fx-background-color: #f2f4f8;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-border-color: transparent transparent #dde1e6 transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-font-size: 14px;
+    -fx-padding: 12 12 12 12;
+    -fx-faint-focus-color: transparent;
+}
+
+.form-champ:focused {
+    -fx-border-color: transparent transparent #0f62fe transparent;
+}
+
+/* TextArea : le fond est dans .content */
+.text-area.form-champ .content {
+    -fx-background-color: #f2f4f8;
+}
+
+.text-area.form-champ {
+    -fx-padding: 0;
+}
+
+/* Étoiles */
+.etoile {
+    -fx-font-size: 22px;
+    -fx-text-fill: #e53935;
+    -fx-cursor: hand;
+}
+
+.note-valeur {
+    -fx-font-size: 16px;
+    -fx-text-fill: black;
+}
+
+/* Zone image */
+.zone-image {
+    -fx-background-color: #f2f4f8;
+    -fx-border-color: #dde1e6;
+    -fx-border-width: 1;
+    -fx-padding: 10 16 10 12;
+    -fx-cursor: hand;
+}
+
+.form-nom-image {
+    -fx-font-size: 14px;
+    -fx-text-fill: #161616;
+}
+
+.icon-image {
+    -fx-background-color: #393939;
+    -fx-min-width: 18;
+    -fx-min-height: 18;
+    -fx-pref-width: 18;
+    -fx-pref-height: 18;
+    -fx-max-width: 18;
+    -fx-max-height: 18;
+    -fx-shape: "M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z";
+}
+
+/* Bouton */
+.btn-creer {
+    -fx-background-color: #0f62fe;
+    -fx-background-radius: 0;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-padding: 14 28 14 28;
+    -fx-cursor: hand;
+}
+
+.btn-creer:hover {
+    -fx-background-color: #0353e9;
+}
+
+.form-scroll,
+.form-scroll > .viewport {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}

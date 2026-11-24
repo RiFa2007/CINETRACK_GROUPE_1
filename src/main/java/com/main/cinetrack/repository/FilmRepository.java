@@ -138,7 +138,6 @@ public class FilmRepository implements IFilmRepository {
         }
     }
 
-    @Override
     public List<Film> rechercher(String texte, String genre) {
         String motif = "%" + (texte == null ? "" : texte.trim().toLowerCase()) + "%";
         String genreFiltre = (genre == null ? "" : genre.trim().toLowerCase());

@@ -17,7 +17,7 @@ public class FilmService {
     }
 
      public void ajouterFilm(Film film) {
-
+        filmRepository.ajouter(film);
     }
 
     public boolean supprimerFilm(int idFilm) {
@@ -25,7 +25,12 @@ public class FilmService {
     }
 
     public List<Film> listeFilm() {
-        return filmRepository.findAll();
+        try {
+            return filmRepository.findAll();
+        }catch (Exception e) {
+            System.out.println(e.getLocalizedMessage());
+        }
+        return null;
     }
 
     // Demande à judi ce que c'est parce que j'en sais rien

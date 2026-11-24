@@ -1,6 +1,9 @@
 package com.main.cinetrack.controllers.FilmControllers;
 
+import com.main.cinetrack.database.DataBaseConnexion;
 import com.main.cinetrack.model.Film;
+import com.main.cinetrack.repository.FilmRepository;
+import com.main.cinetrack.service.FilmService;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
@@ -26,7 +29,7 @@ public class FilmFormController {
     private int note = 0;
     private String cheminImage = null;
 
-
+    FilmService service = new FilmService(new FilmRepository(new DataBaseConnexion()));
 
     @FXML
     public void initialize() {
@@ -75,7 +78,7 @@ public class FilmFormController {
 
         int duree;
         try {
-            duree = Integer.parseInt(champDuree.getText().trim());
+            duree = Integer.parseInt(champDuree.getText().trim());;
         } catch (NumberFormatException e) {
             new Alert(Alert.AlertType.WARNING, "La durée doit être un nombre entier.").show();
             return;
@@ -83,7 +86,6 @@ public class FilmFormController {
 
         Film film = new Film(0, titre, genre, duree, note, synopsis, cheminImage);
 
-        // TODO : appeler votre DAO pour enregistrer le film en base
-        System.out.println("Film créé : " + film.getTitre());
+        service.ajouterFilm(film);
     }
 }

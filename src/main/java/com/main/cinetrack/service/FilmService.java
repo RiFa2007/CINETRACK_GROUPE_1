@@ -26,6 +26,7 @@ public class FilmService {
 
     public List<Film> listeFilm() {
         try {
+            System.out.println(filmRepository.findAll());
             return filmRepository.findAll();
         }catch (Exception e) {
             System.out.println(e.getLocalizedMessage());

@@ -5,6 +5,7 @@ module com.main.cinetrack  {
     requires io.github.cdimascio.dotenv.java;
     requires java.rmi;
     requires jfxtras.controls;
+    requires org.junit.jupiter.api;
 
 
     opens com.main.cinetrack to javafx.fxml;
@@ -16,4 +17,5 @@ module com.main.cinetrack  {
     opens com.main.cinetrack.controllers.FilmControllers to javafx.fxml;
     opens com.main.cinetrack.controllers.TicketController to javafx.fxml;
     opens com.main.cinetrack.model to javafx.base;
+    opens com.main.cinetrack.service to org.junit.platform.commons;
 }

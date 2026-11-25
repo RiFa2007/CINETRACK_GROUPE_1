@@ -1,12 +1,23 @@
 package com.main.cinetrack.repository;
 
+import com.main.cinetrack.database.DataBaseConnexion;
 import com.main.cinetrack.model.Place;
 
 import java.util.List;
 
 public class PlaceRepository implements IPlaceRepository{
+
+
+    DataBaseConnexion dataBaseConnexion = new DataBaseConnexion();
+
+    public PlaceRepository(DataBaseConnexion dataBaseConnexion) {
+        this.dataBaseConnexion = dataBaseConnexion;
+    }
+
     @Override
     public void ajouter(Place Place) {
+
+
 
     }
 

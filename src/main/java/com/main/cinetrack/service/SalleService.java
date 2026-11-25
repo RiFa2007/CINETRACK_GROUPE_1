@@ -35,10 +35,10 @@ public class SalleService  {
     }
 
     public void valideSalle(Salle s) throws NomInvalideException,CapaciteNegativeException{
-        if(s.getCapacite() < 0) {
+        if(s.getCapacite() < 0 ) {
             throw new CapaciteNegativeException("La capacité de la salle doit être strictement positive");
         }
-        if(s.getNom().isEmpty()){
+        if(s.getNom() == null || s.getNom().isEmpty() ){
             throw new NomInvalideException("Le nom de la salle ne doit pas être vide");
         }
     }

@@ -41,8 +41,8 @@
                     <Insets left="30.0"/>
                 </HBox.margin>
             </Label>
-            <ToggleButton fx:id="btnProgrammes" text="Programmés" styleClass="chip" toggleGroup="$groupeFiltre"/>
-            <ToggleButton fx:id="btnMieuxNotes" text="Mieux notés" styleClass="chip" toggleGroup="$groupeFiltre"/>
+            <ToggleButton fx:id="btnGenre" text="Fitre par genre" styleClass="chip" toggleGroup="$groupeFiltre"/>
+            <ToggleButton fx:id="btnTitre" text="Fitre par titre" styleClass="chip" toggleGroup="$groupeFiltre"/>
         </children>
     </HBox>
 

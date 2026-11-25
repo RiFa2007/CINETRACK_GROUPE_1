@@ -2,6 +2,7 @@ package com.main.cinetrack.controllers.FilmControllers;
 
 import com.main.cinetrack.controllers.MainController;
 import com.main.cinetrack.database.DataBaseConnexion;
+import com.main.cinetrack.enums.FiltreFilm;
 import com.main.cinetrack.model.Film;
 import com.main.cinetrack.repository.FilmRepository;
 import com.main.cinetrack.service.FilmService;
@@ -18,15 +19,16 @@ import java.util.List;
 
 public class FilmConsultationController {
 
+
     // ----- Éléments du FXML -----
     @FXML
     private TextField bar_de_recherche;
     @FXML
     private Button btnFiltre;
     @FXML
-    private ToggleButton btnProgrammes;
+    public ToggleButton btnTitre;
     @FXML
-    private ToggleButton btnMieuxNotes;
+    public ToggleButton btnGenre;
 
     @FXML
     private TableView<Film> tableFilms;
@@ -42,14 +44,16 @@ public class FilmConsultationController {
     private TableColumn<Film, Double> colNote;
 
     // Liste complète des films (non filtrée)
-    private List<Film> tousLesFilms = new ArrayList<>();
+    private final List<Film> tousLesFilms = new ArrayList<>();
 
-    private FilmService service ;
+    private final FilmService service = new FilmService(new FilmRepository(new DataBaseConnexion()));
 
 
     // ----- Appelée automatiquement au chargement du FXML -----
     @FXML
     public void initialize() {
+//        System.out.println(service.listeFilm().get(0));
+
         // 1. Lier chaque colonne à un getter de Film
             colTitre.setCellValueFactory(new PropertyValueFactory<>("titre"));
             colGenre.setCellValueFactory(new PropertyValueFactory<>("genre"));
@@ -83,35 +87,20 @@ public class FilmConsultationController {
     // ----- Chargement des films -----
     private void chargerFilms() {
         // TODO : remplacer par votre accès à la base de données (DAO).
-        // Données de TEST uniquement :
-        tousLesFilms.add(new Film(1, "Inception", "Science-fiction", 148, 4.8,
-                "Un voleur s'infiltre dans les rêves.", null));
-        tousLesFilms.add(new Film(2, "The Dark Knight", "Action", 152, 4.9,
-                "Batman affronte le Joker.", null));
-        tousLesFilms.add(new Film(3, "Interstellar", "Science-fiction", 169, 4.6,
-                "Des explorateurs traversent un trou de ver.", null));
+
     }
 
     // ----- Affichage du tableau selon la recherche et le filtre -----
     private void afficherFilms() {
         String recherche = bar_de_recherche.getText().toLowerCase().trim();
-        List<Film> resultat = new ArrayList<>();
+        List<Film> resultat;
 
-        // Filtre par texte (titre ou genre)
-        for (Film f : tousLesFilms) {
-            if (f.getTitre().toLowerCase().contains(recherche)
-                    || f.getGenre().toLowerCase().contains(recherche)) {
-                resultat.add(f);
-            }
+        if (recherche.isEmpty()) {
+            resultat = service.listeFilm();
+        } else {
+            FiltreFilm filtre = btnGenre.isSelected() ? FiltreFilm.GENRE : FiltreFilm.TITRE;
+            resultat = service.rechercherFilm(filtre, recherche);
         }
-
-        // Filtre "Mieux notés" : tri par note décroissante
-        if (btnMieuxNotes.isSelected()) {
-            resultat.sort(Comparator.comparingDouble(Film::getNote).reversed());
-        }
-
-        // Filtre "Programmés" : voir la remarque ci-dessous
-
         tableFilms.setItems(FXCollections.observableArrayList(resultat));
     }
 

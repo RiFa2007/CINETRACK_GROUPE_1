@@ -1,6 +1,10 @@
 package com.main.cinetrack.controllers.FilmControllers;
 
 import com.main.cinetrack.database.DataBaseConnexion;
+import com.main.cinetrack.exception.DureeInvalideException;
+import com.main.cinetrack.exception.GenreInvalideException;
+import com.main.cinetrack.exception.NoteInvalideException;
+import com.main.cinetrack.exception.TitreInvalideException;
 import com.main.cinetrack.model.Film;
 import com.main.cinetrack.repository.FilmRepository;
 import com.main.cinetrack.service.FilmService;
@@ -78,14 +82,29 @@ public class FilmFormController {
 
         int duree;
         try {
-            duree = Integer.parseInt(champDuree.getText().trim());;
+            duree = Integer.parseInt(champDuree.getText().trim());
+            Film film = new Film(0, titre, genre, duree, note, synopsis, cheminImage);
+            service.ajouterFilm(film);
+            new Alert(Alert.AlertType.CONFIRMATION, "Film ajouter avec succes");
         } catch (NumberFormatException e) {
             new Alert(Alert.AlertType.WARNING, "La durée doit être un nombre entier.").show();
             return;
+        } catch (TitreInvalideException e) {
+            new Alert(Alert.AlertType.WARNING, "Le Titre doit être non null").show();
+        } catch (DureeInvalideException e) {
+            new Alert(Alert.AlertType.WARNING, "La durée doit être un nombre entier.").show();
+        } catch (NoteInvalideException e) {
+            new Alert(Alert.AlertType.WARNING, "La note doit être compris entre 1 et ").show();
+        } catch (GenreInvalideException e) {
+            new Alert(Alert.AlertType.WARNING, "Genre invalide").show();
         }
-
-        Film film = new Film(0, titre, genre, duree, note, synopsis, cheminImage);
-
-        service.ajouterFilm(film);
     }
+
+    public void clearInputs(){
+        champTitre.clear();
+        champDuree.clear();
+        champGenre.clear();
+        definirNote(0);
+    }
+
 }

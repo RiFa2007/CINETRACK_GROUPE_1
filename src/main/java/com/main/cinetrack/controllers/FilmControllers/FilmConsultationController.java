@@ -44,7 +44,7 @@ public class FilmConsultationController {
     // Liste complète des films (non filtrée)
     private List<Film> tousLesFilms = new ArrayList<>();
 
-    private final FilmService service = new FilmService(new FilmRepository(new DataBaseConnexion())) ;
+    private FilmService service ;
 
 
     // ----- Appelée automatiquement au chargement du FXML -----
@@ -77,13 +77,19 @@ public class FilmConsultationController {
             afficherFilms();
 
             bar_de_recherche.textProperty().addListener((obs, ancien, nouveau) -> afficherFilms());
+
     }
 
     // ----- Chargement des films -----
     private void chargerFilms() {
         // TODO : remplacer par votre accès à la base de données (DAO).
-        // Données de TEST uniquement :\
-            tousLesFilms.add(service.listeFilm().get(1));
+        // Données de TEST uniquement :
+        tousLesFilms.add(new Film(1, "Inception", "Science-fiction", 148, 4.8,
+                "Un voleur s'infiltre dans les rêves.", null));
+        tousLesFilms.add(new Film(2, "The Dark Knight", "Action", 152, 4.9,
+                "Batman affronte le Joker.", null));
+        tousLesFilms.add(new Film(3, "Interstellar", "Science-fiction", 169, 4.6,
+                "Des explorateurs traversent un trou de ver.", null));
     }
 
     // ----- Affichage du tableau selon la recherche et le filtre -----
@@ -117,7 +123,7 @@ public class FilmConsultationController {
 
     @FXML
     private void onBoutonFiltre() {
-
+        // TODO : ouvrir une fenêtre de filtres avancés si besoin
     }
 
     public void PageAjout() throws IOException {

@@ -20,15 +20,15 @@ public class NavbarController {
         }
     }
     public void goSeance(){
+
+    }
+    public void goSalle(){
         try {
             MainController.changePage("Salle/SalleConsultation");
         }catch (Exception e) {
 //            MainController.afficherMessage()
             System.out.println(e.getMessage());
         }
-    }
-    public void goSalle(){
-
     }
 
     public void goSetting(){

@@ -1,14 +1,17 @@
 package com.main.cinetrack.controllers.FilmControllers;
 
+import com.main.cinetrack.controllers.MainController;
 import com.main.cinetrack.database.DataBaseConnexion;
 import com.main.cinetrack.model.Film;
 import com.main.cinetrack.repository.FilmRepository;
 import com.main.cinetrack.service.FilmService;
 import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -121,5 +124,9 @@ public class FilmConsultationController {
     @FXML
     private void onBoutonFiltre() {
         // TODO : ouvrir une fenêtre de filtres avancés si besoin
+    }
+
+    public void PageAjout() throws IOException {
+        MainController.changePage("film/Film_Form");
     }
 }

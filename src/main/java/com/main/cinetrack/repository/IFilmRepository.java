@@ -17,5 +17,5 @@ public interface IFilmRepository {
 
     List<Film> rechercher_titre(String titre);
 
-    List<Film> rechercher_genre(String genre)
+    List<Film> rechercher_genre(String genre);
 }

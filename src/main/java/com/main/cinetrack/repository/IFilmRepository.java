@@ -14,4 +14,8 @@ public interface IFilmRepository {
     Film findById(int id);
 
     List<Film> findAll();
+
+    List<Film> filtrerFilms(String filtre);
+
+    List<Film> rechercher_genre(String genre);
 }

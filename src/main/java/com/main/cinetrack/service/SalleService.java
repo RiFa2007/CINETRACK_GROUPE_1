@@ -6,6 +6,7 @@ import java.util.List;
 import com.main.cinetrack.exception.CapaciteNegativeException;
 import com.main.cinetrack.exception.IdInvalideException;
 import com.main.cinetrack.exception.NomInvalideException;
+import com.main.cinetrack.exception.SalleIntrouvableException;
 import com.main.cinetrack.model.Salle;
 import com.main.cinetrack.repository.ISalleRepository;
 import com.main.cinetrack.repository.ISeanceRepository;
@@ -41,8 +42,13 @@ public class SalleService  {
         salleRepository.ajouter(s);
     }
 
-    public Salle recupereSalle(int id){
-        return salleRepository.findById(id);
+    public Salle recupereSalle(int id) throws SalleIntrouvableException
+    {
+        Salle salle =  salleRepository.findById(id);
+        if(salle == null){
+            throw  new SalleIntrouvableException("L'id de la salle est invalide");
+        }
+        return salle;
     }
 
     private void valideSalle(Salle s) throws NomInvalideException,CapaciteNegativeException{

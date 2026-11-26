@@ -1,7 +1,7 @@
 package com.main.cinetrack.service;
 
 import com.main.cinetrack.database.DataBaseConnexion;
-import com.main.cinetrack.enums.SalleIntrouvableException;
+import com.main.cinetrack.exception.SalleIntrouvableException;
 import com.main.cinetrack.exception.CapaciteNegativeException;
 import com.main.cinetrack.exception.IdInvalideException;
 import com.main.cinetrack.exception.NomInvalideException;

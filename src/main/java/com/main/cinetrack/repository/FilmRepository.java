@@ -137,11 +137,9 @@ public class FilmRepository implements IFilmRepository {
             throw new DaoException("Lecture du catalogue impossible", e);
         }
     }
-
     @Override
-    public List<Film> rechercher(String texte, String genre) {
-        String motif = "%" + (texte == null ? "" : texte.trim().toLowerCase()) + "%";
-        String genreFiltre = (genre == null ? "" : genre.trim().toLowerCase());
+    public List<Film> rechercher_titre(String titre) {
+        String motif = "%" + (titre == null ? "" : titre.trim().toLowerCase()) + "%";
 
         List<Film> films = new ArrayList<>();
 
@@ -149,6 +147,31 @@ public class FilmRepository implements IFilmRepository {
              PreparedStatement ps = cn.prepareStatement(SQL_SEARCH)) {
 
             ps.setString(1, motif);
+            ps.setString(2, "");
+            ps.setString(3, "");
+
+            try (ResultSet rs = ps.executeQuery()) {
+                while (rs.next()) {
+                    films.add(mapper(rs));
+                }
+            }
+            return films;
+
+        } catch (SQLException | ClassNotFoundException e) {
+            throw new DaoException("Recherche de films par titre impossible", e);
+        }
+    }
+    //recherche par genre
+    @Override
+    public List<Film> rechercher_genre(String genre) {
+        String genreFiltre = (genre == null ? "" : genre.trim().toLowerCase());
+
+        List<Film> films = new ArrayList<>();
+
+        try (Connection cn = db.getConnection();
+             PreparedStatement ps = cn.prepareStatement(SQL_SEARCH)) {
+
+            ps.setString(1, "%");
             ps.setString(2, genreFiltre);
             ps.setString(3, genreFiltre);
 
@@ -160,12 +183,12 @@ public class FilmRepository implements IFilmRepository {
             return films;
 
         } catch (SQLException | ClassNotFoundException e) {
-            throw new DaoException("Recherche de films impossible", e);
+            throw new DaoException("Recherche de films par genre impossible", e);
         }
     }
-
     // ------------------------------------------------------------------
     // Helpers privés
+    
     // ------------------------------------------------------------------
 
     /** Renseigne les 5 paramètres communs à l'INSERT et à l'UPDATE. */

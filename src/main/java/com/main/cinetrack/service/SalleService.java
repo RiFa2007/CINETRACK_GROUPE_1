@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import com.main.cinetrack.exception.CapaciteNegativeException;
+import com.main.cinetrack.exception.IdInvalideException;
 import com.main.cinetrack.exception.NomInvalideException;
 import com.main.cinetrack.model.Salle;
 import com.main.cinetrack.repository.ISalleRepository;
@@ -24,7 +25,13 @@ public class SalleService  {
         salleRepository.supprimer(id);
     }
 
-    public void modifierSalle(Salle s) throws NomInvalideException,CapaciteNegativeException {
+    public void modifierSalle(Salle s) throws NomInvalideException,
+                                              CapaciteNegativeException,
+                                              IdInvalideException
+    {
+        if(s.getIdSalle() <= 0){
+            throw new IdInvalideException("L'id de la salle est invalide");
+        }
         valideSalle(s);
         salleRepository.modifier(s);
     }
@@ -34,7 +41,11 @@ public class SalleService  {
         salleRepository.ajouter(s);
     }
 
-    public void valideSalle(Salle s) throws NomInvalideException,CapaciteNegativeException{
+    public Salle recupereSalle(int id){
+        return salleRepository.findById(id);
+    }
+
+    private void valideSalle(Salle s) throws NomInvalideException,CapaciteNegativeException{
         if(s.getCapacite() < 0 ) {
             throw new CapaciteNegativeException("La capacité de la salle doit être strictement positive");
         }
@@ -52,7 +63,4 @@ public class SalleService  {
         return  salleRepository.findAll();
     }
 
-     public boolean validerCapacite(int idSalle, int nombrePlaces) {
-         return false;
-    }
 }

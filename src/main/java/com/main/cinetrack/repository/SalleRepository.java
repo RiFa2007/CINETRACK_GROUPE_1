@@ -142,6 +142,7 @@ public class SalleRepository implements ISalleRepository {
             throw new DaoException("Lecture des salles impossible", e);
         }
     }
+
     private void setEquipement(Connection cn, PreparedStatement ps, int index, String equipement)
             throws SQLException {
 

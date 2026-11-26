@@ -14,4 +14,5 @@ public interface ISalleRepository {
     Salle findById(int id);
 
     List<Salle> findAll();
+
 }
